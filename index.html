@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>Testing sockets</title>
+        <style>
+            body, html {
+                margin: 0;
+                padding: 0;
+                background: black;
+                overflow:  hidden;
+            }
+
+            #game-container {
+                margin: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="game-container"></div>
+        
+        <script src="libs/phaser.min.js"></script>
+        <script src="libs/phaserfroot.js"></script>
+        
+        <script src="scripts/test.js"></script>
+        <script src="scripts/ship.js"></script>
+        <script src="scripts/bullet.js"></script>
+        <script src="scripts/enemy-ship.js"></script>
+
+        <script src="game.js"></script>
+
+        <script src="/socket.io/socket.io.js"></script>
+        
+        <script>
+                
+            //game.broadcast.emitter.on(game.broadcast.MESSAGE, ( message, value ) => { console.log('message worked') });
+            
+            /*
+            game.broadcast.emitter.on(game.broadcast.MESSAGE, ( message, value ) => { 
+                if ( message === 'game-out' ) {
+                    game.broadcast.ingest('game-in', value );
+                }
+             });
+            */
+
+            //The above code just has the client talking to itself using external emitted messages converted to ingested messages...
+            //Now we need to take the emitted 'game-out' message and route it into the server with socket.io
+            //then the server can receive that message and send an ingest message to all clients!
+                       
+            //socket message receiving
+            var self = this;
+            this.socket = io();
+            
+            //receiving game-in messages from the server, and then ingesting them into the game
+            this.socket.on('game-in', (value) => {
+                //console.log('game-in' + value );
+                game.broadcast.ingest('game-in', value );
+            });
+            
+            //tutorial code for adding players
+            this.socket.on('currentPlayers', function (players) {
+                Object.keys(players).forEach(function (id) {
+                    if (players[id].playerId === self.socket.id) {
+                        addPlayer(self, players[id]);
+                    }
+                });
+            });
+
+            //receiving players from server
+            function addPlayer(self, playerInfo) {
+                console.log('current players server message received');
+                value = 'Connected!';
+                game.broadcast.ingest('game-in', value );
+            };
+
+            //sending game-out messages to the server!
+            game.broadcast.emitter.on(game.broadcast.MESSAGE, ( message, value ) => { 
+                if ( message === 'game-out' ) {
+                    //console.log('game-out' + value);
+                    this.socket.emit('game-out', value );
+                }
+            });
+
+                  
+        </script>
+
+    </body>
+</html>

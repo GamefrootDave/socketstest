@@ -1,0 +1,31 @@
+{
+	"name": "Testing sockets 2",
+	"width": 960,
+	"height": 540,
+	"levels": [
+		{
+			"id": 1,
+			"name": "Level 1",
+			"url": "levels/level-1.json"
+		}
+	],
+	"plugins": [
+		"GamefrootText",
+		"Primitives",
+		"GamefrootPrimitives",
+		"Test",
+		"Ship",
+		"Bullet",
+		"EnemyShip"
+	],
+	"assets": [
+		{
+			"id": 1,
+			"type": "textureatlas",
+			"imageUrl": "assets/spritesheet-1.png",
+			"jsonId": 2,
+			"jsonUrl": "assets/spritesheet-1.json"
+		}
+	],
+	"firstLevel": 1
+}

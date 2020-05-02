@@ -1,0 +1,187 @@
+{
+	"name": "Level 1",
+	"color": {
+		"r": 171,
+		"g": 0,
+		"b": 255,
+		"a": 1
+	},
+	"loader": {},
+	"systems": {},
+	"gameObjects": [
+		{
+			"type": "text",
+			"id": "80",
+			"x": 20,
+			"y": 61,
+			"textColor": "#ffffffff",
+			"textFontFamily": "Helvetica, Arial, sans-serif",
+			"textLineHeight": 1,
+			"textLineWidth": 512,
+			"textSize": 18,
+			"textText": "Testing sockets...",
+			"textWeight": "bold",
+			"components": {
+				"arcadephysics": {
+					"gravity": false
+				},
+				"Test": {
+					"my name": "",
+					"players": null,
+					"ship": "null",
+					"enemy ship": null,
+					"other player name": "",
+					"latest chat": "",
+					"existing player name": "",
+					"list": null,
+					"receivedPlayerList": false,
+					"temp list": null,
+					"my random id": 0
+				}
+			},
+			"plugins": {}
+		},
+		{
+			"type": "static-image",
+			"x": 68,
+			"y": 185,
+			"id": "81",
+			"scaleX": 1,
+			"scaleY": 1,
+			"rotation": 0,
+			"imageId": 1,
+			"anchorPointX": 56,
+			"anchorPointY": 37.5,
+			"components": {
+				"arcadephysics": {
+					"gravity": false
+				},
+				"TextureAnimation": {
+					"idle": {
+						"cells": [
+							1,
+							2
+						],
+						"loop": true,
+						"play": true,
+						"speed": 0.1
+					}
+				},
+				"box": {
+					"x": 14,
+					"y": 10,
+					"width": 84,
+					"height": 64
+				},
+				"Ship": {
+					"thrust": 0,
+					"bullet": null,
+					"my name": "",
+					"enemy ship": null,
+					"other player name": "",
+					"players": null
+				}
+			},
+			"plugins": {}
+		},
+		{
+			"type": "static-image",
+			"x": 28,
+			"y": 132,
+			"id": "82",
+			"scaleX": 1,
+			"scaleY": 1,
+			"rotation": 0,
+			"imageId": 1,
+			"anchorPointX": 6.5,
+			"anchorPointY": 27,
+			"components": {
+				"arcadephysics": {
+					"gravity": false
+				},
+				"TextureAnimation": {
+					"idle": {
+						"cells": [
+							1,
+							0
+						],
+						"loop": true,
+						"play": true,
+						"speed": 0.1
+					}
+				},
+				"box": {
+					"x": 0,
+					"y": 0,
+					"width": 13,
+					"height": 54
+				},
+				"Bullet": {
+					"toucher": "null"
+				}
+			},
+			"plugins": {}
+		},
+		{
+			"type": "static-image",
+			"x": 256,
+			"y": 88,
+			"id": "83",
+			"scaleX": 1,
+			"scaleY": 1,
+			"rotation": 0,
+			"imageId": 1,
+			"anchorPointX": 49,
+			"anchorPointY": 37.5,
+			"components": {
+				"arcadephysics": {
+					"gravity": false
+				},
+				"TextureAnimation": {
+					"idle": {
+						"cells": [
+							1,
+							1
+						],
+						"loop": true,
+						"play": true,
+						"speed": 0.1
+					}
+				},
+				"box": {
+					"x": 10,
+					"y": 20,
+					"width": 80,
+					"height": 50
+				},
+				"EnemyShip": {
+					"textfield": "null",
+					"this player's name": "",
+					"ticks since update": 0
+				}
+			},
+			"plugins": {}
+		},
+		{
+			"type": "text",
+			"id": "84",
+			"x": 19,
+			"y": 21,
+			"textColor": "#fee761ff",
+			"textFontFamily": "Helvetica, Arial, sans-serif",
+			"textLineHeight": 1,
+			"textLineWidth": 636,
+			"textSize": 24,
+			"textText": "WASD to move, Space to shoot, Enter to chat",
+			"textWeight": "bold",
+			"components": {
+				"arcadephysics": {
+					"gravity": false
+				}
+			},
+			"plugins": {}
+		}
+	],
+	"definitions": [],
+	"assets": []
+}

@@ -1,0 +1,7 @@
+{
+	"name": "KiwiFrootCommonImages",
+	"frames": [
+	    { "filename": "gamefroot-logo", "frame": { "x": 0, "y": 0, "w": 578, "h": 46 } },
+	    { "filename": "loading-bar", "frame": { "x": 0, "y": 54, "w": 578, "h": 33 } }
+    ]
+}
